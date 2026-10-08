@@ -19,7 +19,7 @@
 |---|---|
 | Site no ar | https://otaviofelix-in.github.io/Madu-Tasks-Site/ |
 | App (código) | https://github.com/OtavioFelix-in/Madu-Tasks |
-| Baixar o APK | https://github.com/OtavioFelix-in/Madu-Tasks/releases/latest |
+| Baixar o APK | https://github.com/OtavioFelix-in/Madu-Tasks-Site/releases/latest/download/MaduTasks.apk |
 
 ## Como funciona
 
@@ -40,6 +40,7 @@ Site estático, sem build: só `index.html`, `style.css` e a pasta `assets/`.
     ├── logo-claro.svg      # logo horizontal, tema claro
     ├── logo-escuro.svg     # logo horizontal, tema escuro
     ├── logo-animada.mp4    # ícone animado da seção "Baixar"
+    ├── video-capa.jpg      # capa do vídeo antes do play
     ├── icon.png, favicon.png
     ├── telas/              # prints do app
     └── *.ttf               # fontes Inter e ícones Feather
