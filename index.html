@@ -6,14 +6,15 @@
 <title>MaduTasks — a agenda de estudos que nasceu de uma promessa</title>
 <meta name="description" content="MaduTasks é uma agenda de estudos com provas, trabalhos, lembretes, calendário, Pomodoro e resumo. Funciona 100% offline.">
 <meta name="theme-color" content="#E75480">
-<link rel="icon" href="assets/icon.png">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#topo"><img src="assets/icon.png" alt=""> MaduTasks</a>
+    <a class="brand" href="#topo" aria-label="MaduTasks, voltar ao topo"><img class="logo-claro" src="assets/logo-claro.svg" alt="MaduTasks" width="1835" height="452"><img class="logo-escuro" src="assets/logo-escuro.svg" alt="" width="1835" height="452"></a>
     <ul>
       <li><a href="#video">Vídeo</a></li>
       <li><a href="#como">Como funciona</a></li>
@@ -210,7 +211,7 @@
 <!-- BAIXAR -->
 <section class="final" id="baixar">
   <div class="wrap rv">
-    <img src="assets/icon.png" alt="Ícone do MaduTasks">
+    <video class="logo-anim" id="logoAnim" src="assets/logo-animada.mp4" poster="assets/icon.png" muted playsinline preload="auto" aria-label="Ícone do MaduTasks"></video>
     <h2>Leve o MaduTasks <em>com você.</em></h2>
     <p class="sub">Disponível para Android, em APK. Instale, crie suas matérias e lance a primeira prova.</p>
     <div class="cta">
@@ -253,6 +254,14 @@
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: .15 });
   document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+
+  // logo animada da seção Baixar: toca uma vez quando aparece na tela
+  var logo = document.getElementById('logoAnim');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    new IntersectionObserver(function (es, obs) {
+      if (es[0].isIntersecting) { logo.play().catch(function () {}); obs.disconnect(); }
+    }, { threshold: .6 }).observe(logo);
+  }
 </script>
 </body>
 </html>
